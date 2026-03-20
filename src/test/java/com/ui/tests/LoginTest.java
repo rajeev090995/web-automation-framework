@@ -1,19 +1,38 @@
 package com.ui.tests;
 
-import static com.constants.Browser.*;
-import com.ui.pages.HomePage;
+import com.ui.listeners.MyRetryAnalyzer;
+import static org.testng.Assert.*;
 
-public class LoginTest {
+import com.ui.pojo.User;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 
-    public static void main(String[] args) {
-//        System.setProperty(
-//                "webdriver.chrome.driver",
-//                "C:\\Users\\Dell\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe"
-//        );
+@Listeners({com.ui.listeners.TestListener.class})
+public class LoginTest extends TestBase{
 
-        HomePage homePage= new HomePage(CHROME);
-        String userName = homePage.goToLoginPage().doLoginWith("focaweh930@mekuron.com","password").getUserName( );
-        System.out.println(userName);
+  @Test(description = "Verify that user is able to login with valid credentials",
+      groups = {"e2e", "sanity"},dataProviderClass = com.ui.dataproviders.LoginDataProvider.class, dataProvider = "LoginTestDataProvider"
+  ,retryAnalyzer = MyRetryAnalyzer.class)
+  public void loginTest(User user) {
 
-    }
+    assertEquals( homePage.goToLoginPage().doLoginWith(user.getEmailAddress(), user.getPassword())
+        .getUserName(),"Rajeev Kumar");
+
+  }
+
+//  @Test(description = "Verify that user is able to login with valid credentials",
+//      groups = {"e2e", "sanity"},dataProviderClass = com.ui.dataproviders.LoginDataProvider.class, dataProvider = "LoginTestCSVDataProvider")
+//  public void loginCSVTest(User user) {
+//
+//    assertEquals( homePage.goToLoginPage().doLoginWith(user.getEmailAddress(), user.getPassword())
+//        .getUserName(),"Rajeev Kumar");
+//  }
+//
+//  @Test(description = "Verify that user is able to login with valid credentials",
+//      groups = {"e2e", "sanity"},dataProviderClass = com.ui.dataproviders.LoginDataProvider.class, dataProvider = "LoginTestExcelDataProvider")
+//  public void loginExcelTest(User user) {
+//
+//    assertEquals( homePage.goToLoginPage().doLoginWith(user.getEmailAddress(), user.getPassword())
+//        .getUserName(),"Rajeev Kumar");
+//  }
 }
