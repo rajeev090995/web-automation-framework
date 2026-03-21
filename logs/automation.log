@@ -1,0 +1,10 @@
+2026-03-20 22:03:06.092 [main] INFO com.ui.tests.LoginTest - Test suite started
+2026-03-20 22:03:58.509 [TestNG-test-UI Automation Test-1] INFO com.ui.tests.LoginTest - loginTest
+2026-03-20 22:03:58.509 [TestNG-test-UI Automation Test-1] INFO com.ui.tests.LoginTest - Verify that user is able to login with valid credentials
+2026-03-20 22:03:58.509 [TestNG-test-UI Automation Test-1] INFO com.ui.tests.LoginTest - [e2e, sanity]
+2026-03-20 22:04:01.401 [TestNG-test-UI Automation Test-1] INFO com.ui.tests.LoginTest - loginTest PASSED
+2026-03-20 22:04:13.638 [TestNG-test-UI Automation Test-1] INFO com.ui.tests.LoginTest - loginTest
+2026-03-20 22:04:13.638 [TestNG-test-UI Automation Test-1] INFO com.ui.tests.LoginTest - Verify that user is able to login with valid credentials
+2026-03-20 22:04:13.638 [TestNG-test-UI Automation Test-1] INFO com.ui.tests.LoginTest - [e2e, sanity]
+2026-03-20 22:04:15.847 [TestNG-test-UI Automation Test-1] INFO com.ui.tests.LoginTest - loginTest PASSED
+2026-03-20 22:04:16.666 [main] INFO com.ui.tests.LoginTest - Test suite completed
