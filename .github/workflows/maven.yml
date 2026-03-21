@@ -57,7 +57,7 @@ jobs:
         cp -R screenshots/ public/extent-reports/screenshots/
         ls -l
 
-    - name: Deploy 🚀
+    - name: Deployed 🚀
       if: always()
       uses: JamesIves/github-pages-deploy-action@v4
       with:
